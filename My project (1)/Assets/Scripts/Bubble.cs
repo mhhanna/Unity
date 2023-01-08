@@ -7,8 +7,8 @@ public class Bubble : MonoBehaviour
     
     public GameObject platformPathStart;
     public GameObject platformPathEnd;
-    private Vector3 startPosition;
-    private Vector3 endPosition;
+    public Vector3 startPosition;
+    public Vector3 endPosition;
     public int speed;
     public Transform bubble;
 
