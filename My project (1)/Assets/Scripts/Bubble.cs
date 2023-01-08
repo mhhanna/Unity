@@ -11,6 +11,8 @@ public class Bubble : MonoBehaviour
     private Vector3 endPosition;
     public int speed;
     public Transform bubble;
+
+    private SpriteRenderer spriteRenderer;
     
     
     
@@ -19,6 +21,8 @@ public class Bubble : MonoBehaviour
     {
       startPosition = platformPathStart.transform.position;
       endPosition = platformPathEnd.transform.position; 
+      spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
     
 
@@ -39,6 +43,7 @@ void OnCollisionEnter2D(Collision2D col)
         Debug.Log("contact bubble");
         
         col.gameObject.transform.SetParent(gameObject.transform,true);
+        spriteRenderer.color = new Color(255f, 255f, 0f, 1f);
 }
 
 void OnCollisionExit2D(Collision2D col)

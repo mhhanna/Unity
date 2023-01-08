@@ -146,4 +146,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 581097866707772590}
   direction: right
-  jumpAmount: 8
+  jumpAmount: 4
+  speed: 1
