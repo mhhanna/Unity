@@ -124,7 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPathStart: {fileID: 3502053936449185020, guid: 8d1b5b22ff6bef34783ed6d16857d07c, type: 3}
-  platformPathEnd: {fileID: 3126710994372297807, guid: f9db06fd8639656428a36cee2c399dc8, type: 3}
+  platformPathEnd: {fileID: 3293168128390246111, guid: f9db06fd8639656428a36cee2c399dc8, type: 3}
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
   speed: 1
   bubble: {fileID: 3865026894237069097}
 --- !u!50 &3865026894237069100

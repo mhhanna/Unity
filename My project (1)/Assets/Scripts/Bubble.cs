@@ -13,9 +13,12 @@ public class Bubble : MonoBehaviour
     public Transform bubble;
 
     private SpriteRenderer spriteRenderer;
+
+    public float timeRemaining = 3;
+
+    public bool timerIsRunning = false;
     
-    
-    
+       
 
     private void Start()
     {
@@ -30,13 +33,14 @@ public class Bubble : MonoBehaviour
     void Update()
     {
        MoveTowardPoint();
+       if (timerIsRunning) {
+        runTimer();
+       }
     } 
 
     void MoveTowardPoint(){
         bubble.position = Vector2.MoveTowards(bubble.position, endPosition, Time.deltaTime*speed);
-       
-
-    }
+     }
 
 void OnCollisionEnter2D(Collision2D col)
     {
@@ -44,12 +48,26 @@ void OnCollisionEnter2D(Collision2D col)
         
         col.gameObject.transform.SetParent(gameObject.transform,true);
         spriteRenderer.color = new Color(255f, 255f, 0f, 1f);
+        timerIsRunning = true;
 }
 
 void OnCollisionExit2D(Collision2D col)
     {
         col.gameObject.transform.parent = null;
     }
+
+
+void runTimer(){
+
+       if (timeRemaining > 0){
+                timeRemaining -= Time.deltaTime;
+            } else {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+                Destroy(gameObject);
+            }
+}
 
     }
 
