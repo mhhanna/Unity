@@ -6,27 +6,27 @@ public class bubbleSpawner : MonoBehaviour
 {
 
     public Bubble bubblePrefab;
+    private float timeRemaining = 5;
     // Start is called before the first frame update
     void Start()
     {
-       for (int i = 0; i < 1; i++)
-        {
-           Spawn();
-        }
-
-
+        
+         Spawn();
+    
     }
     public void Spawn(){
 
          Bubble bubble = Instantiate(bubblePrefab, transform.localPosition, Quaternion.identity);
 
-       
-
-
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if (timeRemaining > 0){
+            timeRemaining -= Time.deltaTime;
+        } else {
+            timeRemaining = 5;
+            Spawn();
+        }
     }
 }
